@@ -224,25 +224,43 @@ function displaySongs(songArray) {
     });
 }
 
-
    async function getSongs(folder) {
     currFolder = folder;
 
     if (folder === "songs/cs") {
         songs = [
-            
+            "hindi.mp3",
+            "song1.mp3",
+            "song2.mp3"
         ];
     }
 
     else if (folder === "songs/ncs") {
         songs = [
-            
+            "song1.mp3",
+            "song2.mp3",
+            "song3.mp3"
         ];
     }
 
     else if (folder === "songs/kannada_hitts") {
         songs = [
-            
+            "Bangaradi madida -I Love U.mp3",
+            "Belakina kavithe beragige sothe.mp3",
+            "belegeddu yara mukava kirik party.mp3",
+            "googli manasu adi thappide.mp3",
+            "ha modadinda malge ondu spoorthi ede.mp3",
+            "Kan Kan salige - Navagraha.mp3",
+            "kuhu kuhu kogile.mp3",
+            "Nane neenu ninage Nanu-upadyaksha.mp3",
+            "nange nenu ninage nanu.mp3",
+            "Nee Amruthadaare...mp3",
+            "Ondu male billu-ondu male moda.mp3",
+            "paramathma paravshanadenu.mp3",
+            "sada ninna kannali nanna bimba kanalu.mp3",
+            "Shrungarada Honge mara.mp3",
+            "Singara siriye-kanthara.mp3",
+            "Yaro kannali kannanittu - mansinalli.mp3"
         ];
     }
 
@@ -251,7 +269,6 @@ function displaySongs(songArray) {
 
     return songs;
 }
-
 
 function playMusic(track, pause = false) {
     /* This function plays the selected song and updates playbar song name, time, and saved last song. */
@@ -856,8 +873,23 @@ function resetUserHeader() {
     if (openSignup) openSignup.style.display = "inline-block";
 }
 
-function openAuth() {
-    return;
+function openAuth(mode) {
+    /* This function opens login or signup popup based on button clicked. */
+    if (!authOverlay || !authTitle || !authSubmit || !authBox) return;
+
+    authMode = mode;
+
+    if (mode === "signup") {
+        authTitle.innerText = "Create Account";
+        authSubmit.innerText = "Sign Up";
+        authBox.classList.add("signup");
+    } else {
+        authTitle.innerText = "Login Required";
+        authSubmit.innerText = "Login";
+        authBox.classList.remove("signup");
+    }
+
+    authOverlay.classList.add("show");
 }
 
 function closeAuthPopup() {
@@ -1046,26 +1078,23 @@ async function main() {
 }
 
 function startAppByLoginStatus() {
-    showMusicApp();
-    main();
-}
-function startDemoApp() {
-    const app = document.querySelector(".spotifyPlaylists");
-    if (app) app.style.display = "block";
+    /* This function checks login status and decides whether to open app or login popup. */
+    const savedEmail = localStorage.getItem("pandafiEmail");
+    const isLoggedIn = localStorage.getItem("pandafiLoggedIn");
 
-    const openLogin = document.getElementById("openLogin");
-    const openSignup = document.getElementById("openSignup");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const userEmail = document.getElementById("userEmail");
-
-    if (openLogin) openLogin.style.display = "none";
-    if (openSignup) openSignup.style.display = "none";
-    if (logoutBtn) logoutBtn.style.display = "none";
-    if (userEmail) userEmail.style.display = "none";
-
-    main();
+    if (savedEmail && isLoggedIn === "true") {
+        showUserEmail(savedEmail);
+        showMusicApp();
+        main();
+    } else {
+        hideMusicApp();
+        resetUserHeader();
+        openAuth("login");
+    }
 }
 
+setupAuthSystem();
 setupProfilePageOpen();
 setupFooter();
-startDemoApp();
+startAppByLoginStatus();
+
