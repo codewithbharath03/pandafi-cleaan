@@ -1,4 +1,4 @@
-console.log("Spotify Clone Ready");
+console.log("Pandafi Clone Ready");
 
 let currentSong = new Audio();
 let songs = [];
@@ -229,19 +229,19 @@ function displaySongs(songArray) {
 
     if (folder === "songs/cs") {
         songs = [
-           
+           //Add songs
         ];
     }
 
     else if (folder === "songs/ncs") {
         songs = [
-           
+          //Add songs 
         ];
     }
 
     else if (folder === "songs/kannada_hitts") {
         songs = [
-           
+          //Add songs  
         ];
     }
 
