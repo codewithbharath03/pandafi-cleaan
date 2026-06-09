@@ -229,38 +229,19 @@ function displaySongs(songArray) {
 
     if (folder === "songs/cs") {
         songs = [
-            "hindi.mp3",
-            "song1.mp3",
-            "song2.mp3"
+           
         ];
     }
 
     else if (folder === "songs/ncs") {
         songs = [
-            "song1.mp3",
-            "song2.mp3",
-            "song3.mp3"
+           
         ];
     }
 
     else if (folder === "songs/kannada_hitts") {
         songs = [
-            "Bangaradi madida -I Love U.mp3",
-            "Belakina kavithe beragige sothe.mp3",
-            "belegeddu yara mukava kirik party.mp3",
-            "googli manasu adi thappide.mp3",
-            "ha modadinda malge ondu spoorthi ede.mp3",
-            "Kan Kan salige - Navagraha.mp3",
-            "kuhu kuhu kogile.mp3",
-            "Nane neenu ninage Nanu-upadyaksha.mp3",
-            "nange nenu ninage nanu.mp3",
-            "Nee Amruthadaare...mp3",
-            "Ondu male billu-ondu male moda.mp3",
-            "paramathma paravshanadenu.mp3",
-            "sada ninna kannali nanna bimba kanalu.mp3",
-            "Shrungarada Honge mara.mp3",
-            "Singara siriye-kanthara.mp3",
-            "Yaro kannali kannanittu - mansinalli.mp3"
+           
         ];
     }
 
