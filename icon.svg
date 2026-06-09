@@ -1,0 +1,48 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <circle cx="256" cy="256" r="240" fill="#0b0b0b"/>
+
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="greenGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1DB954"/>
+      <stop offset="100%" stop-color="#1ed760"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Headphones (arc) -->
+  <path d="
+    M150 250
+    C150 140, 362 140, 362 250
+  " stroke="url(#greenGlow)" stroke-width="18" fill="none" stroke-linecap="round"/>
+
+  <!-- Left ear cup -->
+  <rect x="120" y="250" width="45" height="80" rx="20" fill="url(#greenGlow)"/>
+
+  <!-- Right ear cup -->
+  <rect x="347" y="250" width="45" height="80" rx="20" fill="url(#greenGlow)"/>
+
+  <!-- Letter P body -->
+  <path d="
+    M210 180
+    V390
+    H250
+    V310
+    H295
+    C345 310 350 260 350 240
+    C350 200 325 180 285 180
+    Z
+  " fill="url(#greenGlow)"/>
+
+  <!-- Inner cut of P -->
+  <path d="
+    M250 215
+    H285
+    C305 215 310 235 310 245
+    C310 265 300 275 285 275
+    H250
+    Z
+  " fill="#0b0b0b"/>
+
+</svg>
